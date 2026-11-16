@@ -8,6 +8,14 @@ export function notFound(req, res) {
 export function errorHandler(error, req, res, next) {
   if (res.headersSent) return next(error)
 
+  if (error instanceof SyntaxError && error.status === 400 && 'body' in error) {
+    return res.status(400).json({ success: false, message: 'The request body contains invalid JSON.' })
+  }
+
+  if (error.message?.includes('CORS')) {
+    return res.status(403).json({ success: false, message: 'This website origin is not allowed.' })
+  }
+
   if (error.code === 11000) {
     const fields = Object.keys(error.keyPattern || {})
     return res.status(409).json({
