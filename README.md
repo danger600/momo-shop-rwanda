@@ -1,16 +1,42 @@
-# React + Vite
+# MOMO SHOP RWANDA
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A full-stack e-commerce application for Rwanda, built with React, Vite, Node.js, Express and MongoDB.
 
-Currently, two official plugins are available:
+## Project structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Frontend: React + Vite application in the repository root.
+- Backend: Express REST API in the server/ folder.
+- Database: MongoDB with Mongoose.
+- Authentication: JWT tokens and bcrypt password hashing.
+- Currency: Rwandan francs (RWF).
 
-## React Compiler
+## Current development status
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+The current storefront includes a responsive product catalogue, search, category filtering, a browser-persisted shopping bag, and a clearly labelled demo checkout.
 
-## Expanding the Oxlint configuration
+### Backend foundation
+The server includes a MongoDB connection, customer registration and login, JWT authentication, administrator authorization, product catalogue endpoints, product validation, and centralized error handling.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Checkout, live orders, mobile-money payment processing, and production customer-account integration are not active yet. MTN MoMo and Airtel Money must remain sandbox/test integrations until provider approval and credentials are available.
+
+## Run the frontend
+
+From the repository root:
+
+    npm.cmd install
+    npm.cmd run dev
+
+Open http://localhost:5173.
+
+## Run the backend
+
+See server/README.md for backend setup, MongoDB Atlas configuration, environment variables, administrator seeding, and API endpoints.
+
+Never commit environment files, credentials, database URIs, API keys, or payment-provider secrets.
+
+## Developer
+
+Remy Nsanzimana
+BULL MAN
+Founder & Lead Developer
