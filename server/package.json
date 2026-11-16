@@ -1,0 +1,13 @@
+{
+  "name": "momo-shop-rwanda-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "REST API for MOMO SHOP RWANDA",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "seed:admin": "node src/scripts/seedAdmin.js"
+  }
+}
