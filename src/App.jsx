@@ -1,6 +1,6 @@
 
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowRight, Check, CircleUserRound, CreditCard, Heart, Menu, Minus, PackageCheck, Plus, Search, ShieldCheck, ShoppingBag, Sparkles, Truck, X } from 'lucide-react'
+import { ArrowRight, Check, ChevronDown, CircleUserRound, CreditCard, Heart, Menu, Minus, PackageCheck, Plus, Search, ShieldCheck, ShoppingBag, Sparkles, Truck, X } from 'lucide-react'
 import './App.css'
 
 const products = [
@@ -15,6 +15,7 @@ const products = [
 ]
 const categories = ['All products', 'Electronics', 'Fashion', 'Home', 'Beauty']
 const money = (amount) => 'RWF ' + Number(amount).toLocaleString('en-US')
+const currentYear = new Date().getFullYear()
 const getSavedCart = () => {
   try { return JSON.parse(localStorage.getItem('momo-shop-cart') || '[]') } catch { return [] }
 }
@@ -129,7 +130,7 @@ function App() {
         <section className="closing-banner"><div className="closing-mark">M</div><div><small>A MARKETPLACE WITH YOU IN MIND</small><h2>Everyday shopping,<br /><em>made simpler.</em></h2></div><a href="#products">Start exploring <ArrowRight size={17} /></a></section>
       </main>
 
-      <footer className="footer"><div className="footer-main"><a className="brand" href="#home"><span className="brand-mark">M</span><span><b>MOMO<span>SHOP</span></b><small>RWANDA</small></span></a><p>Your everyday marketplace. Discover useful products and make shopping feel simple.</p><nav><a href="#products">Shop</a><a href="#categories">Categories</a><a href="#why-us">About us</a><a href="mailto:hello@momoshop.rw">Contact</a></nav></div><div className="footer-bottom"><span>© {new Date().getFullYear()} MOMO SHOP RWANDA. All rights reserved.</span><b>DEMO STOREFRONT · SAMPLE PRODUCTS</b></div></footer>
+      <footer className="footer"><div className="footer-main"><a className="brand" href="#home"><span className="brand-mark">M</span><span><b>MOMO<span>SHOP</span></b><small>RWANDA</small></span></a><p>Your everyday marketplace. Discover useful products and make shopping feel simple.</p><nav><a href="#products">Shop</a><a href="#categories">Categories</a><a href="#why-us">About us</a><a href="mailto:hello@momoshop.rw">Contact</a></nav></div><div className="footer-bottom"><span>© {currentYear} MOMO SHOP RWANDA. All rights reserved.</span><b>DEMO STOREFRONT · SAMPLE PRODUCTS</b></div></footer>
 
       {notice && <div className="toast" role="status"><Check size={17} />{notice}</div>}
       {cartOpen && <div className="drawer-backdrop" onMouseDown={(e) => { if (e.target === e.currentTarget) closeCart() }}><aside className="cart-drawer">
