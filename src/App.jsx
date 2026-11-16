@@ -1,6 +1,6 @@
 
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowRight, Check, ChevronDown, CircleUserRound, Heart, Menu, Minus, PackageCheck, Plus, Search, ShieldCheck, ShoppingBag, Truck, X } from 'lucide-react'
+import { ArrowRight, Check, ChevronDown, CircleUserRound, CreditCard, Heart, Menu, Minus, PackageCheck, Plus, Search, ShieldCheck, ShoppingBag, Sparkles, Truck, X } from 'lucide-react'
 import './App.css'
 
 const products = [
